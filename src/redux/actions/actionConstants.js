@@ -1,0 +1,6 @@
+export const CREATE_POST = 'CREATE_POST'
+export const GET_POST = 'GET_POST'
+export const CREATE_POST_ERR = 'CREATE_POST_ERR'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGIN_ERROR = 'LOGIN_ERROR'
+export const SIGN_OUT = 'SIGN_OUT'
