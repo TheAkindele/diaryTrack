@@ -1,4 +1,4 @@
-import { CREATE_POST, CREATE_POST_ERR, GET_POST } from '../actions/actionConstants'
+import { CREATE_POST, CREATE_POST_ERR, GET_POST, DELETE_POST } from '../actions/actionConstants'
 
 const initPostState = {
     posts: [],
@@ -8,11 +8,11 @@ const initPostState = {
 const postReducer = (state = initPostState, action) => {
     switch (action.type) {
         case (CREATE_POST):
-            console.log('created project= ', action.payload)
+            //console.log('created project= ', action.payload)
             return state
 
         case CREATE_POST_ERR:
-            console.log('error message ', action.payload)
+            //console.log('error message ', action.payload)
             return state
 
         case (GET_POST):
@@ -20,6 +20,10 @@ const postReducer = (state = initPostState, action) => {
                 ...state,
                 post: action.payload
             })
+
+        case DELETE_POST:
+            //console.log('post deleted ')
+            return state
 
         default:
             return state
