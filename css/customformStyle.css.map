@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,SAAS;CAEpB",
+    "sources": [
+        "../src/reUsables/customformStyle.scss"
+    ],
+    "names": [],
+    "file": "customformStyle.css"
+}

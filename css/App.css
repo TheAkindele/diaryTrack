@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app {
+  background-color: lightblue;
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.load {
+  width: 20vw;
+  margin: 20vh auto;
+  color: red;
+  font-weight: bolder;
+}
+/*# sourceMappingURL=App.css.map */

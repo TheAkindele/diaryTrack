@@ -1,17 +1,26 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-
+import { Route, Switch } from 'react-router-dom'
+import NavBar from './components/navFolder/Navbar'
+import Dashboard from './components/homepageFolder/dashboardFolder/Dashboard'
+import Event from './components/eventFolder/Event'
+import NewEvent from './components/createEventFolder/NewEvent'
+import SignIn from './components/signIn&OutFolder/SignIn'
+import SignUp from './components/signIn&OutFolder/SignUp'
+import './App.scss'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app">
-        <NavBar />
-        <Switch>
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <div className="app">
+      <NavBar />
+      <Switch>
+        <Route exact path='/' component={Dashboard} />
+        <Route path='/event/:eventId' component={Event} />
+        <Route path='/new-event' component={NewEvent} />
+        <Route path='/sign-in' component={SignIn} />
+        <Route path='/sign-up' component={SignUp} />
+      </Switch>
+    </div>
   );
 }
 

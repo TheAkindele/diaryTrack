@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightblue;
+}
+
+.app {
+    width: 100vw;
+}
+
+a{
+    color: black;
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.load{
+    width: 20vw;
+    margin: 20vh auto;
+    color: red;
+    font-weight: bolder;
+}
