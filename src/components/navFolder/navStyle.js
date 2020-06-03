@@ -16,26 +16,24 @@ export const Navbox = styled.div`
     justify-content: space-between;
     align-items: center;
 `
+export const NavItems = styled.div`
+width: 40%;
+
+`
 
 export const Title = styled(Link)`
     color: yellow;
-
     :hover{color: yellow;}
 `
 
 export const NavMenu = styled.div`
     display: flex;
     justify-content: space-around;
-    width: 30%;
-    height: 70%;
 
-    .list{
+    .list, a{
         padding: 10px;
         color: white;
-    }
-
-    .initial{
-        border-radius: 70%;
-        background-color: tomato;
+        cursor: pointer;
     }
 `
+

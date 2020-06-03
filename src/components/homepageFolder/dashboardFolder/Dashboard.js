@@ -1,19 +1,34 @@
 import React from 'react'
 import EventSummary from '../eventSummaryFolder/EventSummary'
-import Notification from '../notificationFolder/Notification'
+//import Notification from '../notificationFolder/Notification'
 import { DashboardStyle } from './dashboardStyle'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-const Dashboard = () => {
+const Dashboard = ({ userStatus }) => {
+    if (!userStatus.uid)
+        return <Redirect to='/sign-in'></Redirect>
+
     return (
         <DashboardStyle>
             <div>
                 <EventSummary />
             </div>
-            <div>
-                <Notification />
-            </div>
+
         </DashboardStyle>
     );
 }
 
-export default Dashboard;
+const mapStateToProps = state => ({
+    userStatus: state.firebase.auth
+})
+
+export default connect(mapStateToProps)(Dashboard)
+
+
+
+/*
+<div>
+                <Notification />
+            </div>
+*/

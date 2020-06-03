@@ -5,5 +5,6 @@ width: 50%;
 margin: 0 auto;
 padding: 25px 5px;
 display: flex;
-justify-content: space-between;
+justify-content: center;
+
 `

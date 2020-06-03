@@ -15,13 +15,35 @@
         color: black;
     }
 
-    &.create-event{
-        background-color: rgb(55, 216, 221);
-        color: white;
-        width: 200px;
+    &.sign-up{
+        background-color: rgb(99, 238, 44);
+        color: red;
+        width: 100px;
 
         &:hover{
             background-color: tomato;
+            color: yellow;
+        }
+    }
+
+    &.sign-in{
+        background-color: lightseagreen;
+        color: white;
+        width: 100px;
+
+        &:hover{
+            background-color: green;
+            color: yellow;
+        }
+    }
+
+    &.google-sign-in-btn{
+        background-color: yellow;
+        color: black;
+        width: 200px;
+
+        &:hover{
+            background-color: black;
             color: yellow;
         }
     }
