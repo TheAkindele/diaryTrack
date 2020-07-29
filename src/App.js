@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route, Switch } from 'react-router-dom'
 //import NavBar from './components/navFolder/Navbar'
 import Dashboard from './components/homepageFolder/dashboardFolder/Dashboard'
