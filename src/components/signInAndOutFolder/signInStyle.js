@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const SignInStyle = styled.div`
     background-color: white;
     width: 40%;
-    margin: 20px auto;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     @media (max-width: 768px) {
