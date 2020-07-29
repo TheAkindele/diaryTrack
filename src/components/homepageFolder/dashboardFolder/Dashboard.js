@@ -11,10 +11,7 @@ const Dashboard = ({ userStatus }) => {
 
     return (
         <DashboardStyle>
-            <div>
-                <EventSummary />
-            </div>
-
+            <EventSummary />
         </DashboardStyle>
     );
 }
@@ -24,11 +21,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(Dashboard)
-
-
-
-/*
-<div>
-                <Notification />
-            </div>
-*/

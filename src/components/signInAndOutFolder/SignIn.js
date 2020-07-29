@@ -36,7 +36,7 @@ class SignIn extends Component {
 
         return (
             <SignInStyle>
-                <h3>Sign In</h3>
+                <p>Sign In</p>
                 <form onSubmit={this.handleSubmit}>
                     <SignInErrorStyle>
                         {

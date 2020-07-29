@@ -1,6 +1,24 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+export const EventsSummary = styled.div`
+    width: 50%;
+    @media (max-width: 768px) {
+        width: 90%
+    }
+`
+
+export const LinkStyle = styled(Link)`
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: red;
+        @media (max-width: 768px) {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+`
+
 export const EventSummaryStyle = styled.div`
     margin-bottom: 10px;
     display: flex;
@@ -11,8 +29,7 @@ export const EventSummaryStyle = styled.div`
 export const SummaryStyle = styled.div`
     background-color: lightgoldenrodyellow;
     padding: 10px;
-    text-transform: capitalize;
-    width: 350px
+    text-transform: capitalize; 
 `
 
 export const SummaryTitleStyle = styled(Link)`

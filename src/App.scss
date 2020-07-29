@@ -4,12 +4,11 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: lightblue;
-}
-
 .app {
-    width: 100vw;
+    width: 100%;
+    min-height: 80vh;
+    padding: 15px 0;
+    background-color: lightblue;
 }
 
 a{
@@ -21,8 +20,13 @@ a{
 }
 
 .load{
-    width: 20vw;
-    margin: 20vh auto;
+    width: 20%;
+    margin: 30vh auto;
     color: red;
-    font-weight: bolder;
+    font-size: 2.5rem;
+    font-weight: 900;
+    @media screen {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
 }

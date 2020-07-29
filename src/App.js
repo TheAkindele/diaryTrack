@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route, Switch } from 'react-router-dom'
-import NavBar from './components/navFolder/Navbar'
+//import NavBar from './components/navFolder/Navbar'
 import Dashboard from './components/homepageFolder/dashboardFolder/Dashboard'
 import Event from './components/eventFolder/Event'
 import NewEvent from './components/createEventFolder/NewEvent'
@@ -12,7 +12,6 @@ import './App.scss'
 function App() {
   return (
     <div className="app">
-      <NavBar />
       <Switch>
         <Route exact path='/' component={Dashboard} />
         <Route path='/event/:eventId' component={Event} />

@@ -34,7 +34,7 @@ class NewEvent extends Component {
 
         return (
             <NewEventStyle>
-                <h3>Create New Event</h3>
+                <p>Create New Event</p>
                 <form onSubmit={this.handleSubmit}>
 
                     <CustomFormInput type="text" name='title' value={this.state.title} label='Title' handleChange={this.handleChange} />

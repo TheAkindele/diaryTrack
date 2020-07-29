@@ -1,44 +1,51 @@
 import React from 'react'
-import { SummaryStyle, EventSummaryStyle, SummaryTitleStyle, SummaryFooterStyle } from './eventSummaryStyle'
+import { EventsSummary, SummaryStyle, EventSummaryStyle, SummaryTitleStyle, SummaryFooterStyle, LinkStyle } from './eventSummaryStyle'
 import { DeleteButton } from '../../eventFolder/eventStyle'
 import { connect } from 'react-redux'
 import { postDeleteAction } from '../../../redux/actions/postActions'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 
 function EventSummary({ allPosts, deleteEvent }) {
+    console.log('all post ', allPosts)
     return (
-        <div className='event-summary'>
-
+        <EventsSummary>
             {
-                allPosts && allPosts.map(post => (
-                    <EventSummaryStyle key={post.id}>
-                        <SummaryStyle>
-                            <SummaryTitleStyle to={`/event/${post.id}`} >
-                                <h3 className="title">{post.title}</h3>
-                            </SummaryTitleStyle>
-                            <h6 className="content-summary">{post.summary}</h6>
+                allPosts != 'undefined' && allPosts != null && allPosts.length && allPosts.length > 0 ?
+                    (
+                        allPosts.map(post => (
+                            <EventSummaryStyle key={post.id}>
+                                <SummaryStyle>
+                                    <SummaryTitleStyle to={`/event/${post.id}`} >
+                                        <h3 className="title">{post.title}</h3>
+                                    </SummaryTitleStyle>
+                                    <h6 className="content-summary">{post.summary}</h6>
 
-                        </SummaryStyle>
-                        <SummaryFooterStyle>
-                            <span className="date">{moment(post.createdAt.toDate()).calendar()}</span>
-                        </SummaryFooterStyle>
-                        <DeleteButton onClick={() => deleteEvent(post.id)}>
-                            delete
-                </DeleteButton>
-                    </EventSummaryStyle>
-                ))
+                                </SummaryStyle>
+                                <SummaryFooterStyle>
+                                    <span className="date">{moment(post.createdAt.toDate()).calendar()}</span>
+                                </SummaryFooterStyle>
+                                <DeleteButton onClick={() => deleteEvent(post.id)}>
+                                    delete
+                    </DeleteButton>
+                            </EventSummaryStyle>
+                        ))
+                    )
+                    : <LinkStyle to='/new-event'>Click to create an event</LinkStyle>
             }
-        </div >
+        </EventsSummary >
     )
 }
 
 const mapStateToProps = state => {
-    //console.log('the state= ', state)
+    const eventsOrder = state.firestore.ordered.events
+    console.log('event order= ', eventsOrder)
+    Array.isArray(eventsOrder)
     return {
-        allPosts: state.firestore.ordered.events
+        allPosts: eventsOrder
     }
 }
 
@@ -50,8 +57,3 @@ export default compose(
     connect(mapStateToProps, mapDispatchToProps),
     firestoreConnect([{ collection: 'events', orderBy: ['createdAt', 'desc'] }])
 )(EventSummary)
-
-
-/*
-<span>Posted by <span className='poster'>poster name</span></span>
-*/
